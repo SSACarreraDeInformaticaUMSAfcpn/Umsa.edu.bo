@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: repeating-linear-gradient(-60deg, #e0e0e0, #e0e0e0 2px, #ffffff 2px, #ffffff 4px);
+            font-family: Arial, sans-serif;
+        }
+
+
+        /* Cambia el color de fondo de la barra de navegación a azul y las letras a blanco */
+        .navbar-custom {
+            background-color: rgb(24, 59, 90);
+            position: relative;
+        }
+
+        .navbar-custom::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            z-index: 1;
+        }
+
+        .navbar-custom .container-fluid {
+            position: relative;
+            z-index: 2;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: white;
+            font-weight: bold;
+        }
+
+        .navbar-custom .navbar-nav .nav-link {
+            color: white;
+        }
+
+        .navbar-custom .navbar-toggler-icon {
+            background-color: rgb(24, 59, 90);
+        }
+
+        /* Estilo para las subopciones del menú desplegable */
+        .navbar-custom .dropdown-menu-custom {
+            background-color: rgb(24, 59, 90);
+            z-index: 0;
+        }
+
+        /* Color de texto blanco para las subopciones */
+        .navbar-custom .dropdown-menu-custom a {
+            color: rgb(0, 179, 9);
+        }
+
+        /* Estilo al hacer clic en una opción del menú desplegable */
+        .navbar-custom .dropdown-menu-custom a:hover {
+            color: black;
+            background-color: transparent !important;
+        }
+
+        /* Elimina el margen en las subopciones del menú desplegable */
+        .navbar-custom .dropdown-menu-custom {
+            margin: 0;
+            border: none;
+        }
+
+        /* Elimina el cuadro que rodea las subopciones al desplegarse */
+        .navbar-custom .nav-item.dropdown:hover .dropdown-menu-custom {
+            display: block;
+        }
+        h1 {
+        margin: 0;
+        font-size: 14px; /* Ajusta esta propiedad para cambiar el tamaño del texto */
+        text-align: left;
+        }
+
+
+        .custom-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: rgb(231, 231, 231);
+        }
+
+        .custom-table th,
+        .custom-table td {
+        padding: 10px;
+        text-align: left; /* Alineación a la izquierda */
+        white-space: nowrap; /* Evitar saltos de línea */
+        border-bottom: 1px solid rgb(180, 180, 180); /* Línea gris en la parte inferior de cada celda */
+        }
+
+        .custom-table th {
+        font-weight: bold;
+        }
+
+        .custom-table .header-2024 {
+        background-color: transparent;
+        font-weight: bold;
+        color: black;
+        }
+
+        .custom-table .second-row {
+        background-color: rgb(202, 197, 197);
+        font-weight: bold;
+        color: rgb(10, 115, 175);
+        text-align: left; /* Alineación a la izquierda */
+        }
+
+        .custom-table .normal {
+        font-weight: normal;
+        }
+
+
+
+        .secondary-table {
+            width: 600px; /* Tamaño ajustable según tu necesidad */
+            border-collapse: collapse;
+            margin-top: 1px; /* Separación entre tablas */
+            background-color: rgb(205, 235, 205); /* Color de fondo verde claro */
+            table-layout: fixed ; /* Asegura que las celdas tengan un tamaño fijo */
+        }
+        .secondary-table th,
+        .secondary-table td {
+            border: 1px solid rgb(188, 189, 188); /* Separaciones de color negro */
+            padding: 10px;
+            text-align: left; /* Alineación a la izquierda */
+            font-weight: bold; /* Texto en negrita */
+            word-wrap: break-word;
+            max-width: 100px; /* Ajusta el ancho máximo según sea necesario */
+        }
+
+        .secondary-table .row1-col1 {
+            color: blue; /* Fila 1, Columna 1, letras azules */
+        }
+
+        .secondary-table .row1-col2 {
+            color: rgb(35, 107, 6); /* Fila 1, Columna 2, letras naranjas */
+        }
+
+        .secondary-table .row1-col3 {
+            color: rgb(148, 9, 9); /* Fila 1, Columna 3, letras rojas */
+        }
+
+        .secondary-table .row2-col1 {
+            color: rgb(187, 104, 9); /* Fila 2, Columna 1, letras marrones */
+        }
+
+        .secondary-table .row2-col2,
+        .secondary-table .row2-col3 {
+            color: rgb(0, 0, 0); /* Fila 2, Columnas 2 y 3, letras verdes */
+        }
+        
+
+    </style>
+    <title>Navbar Personalizado</title>
+</head>
+
+<body>
+    
+
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">S.S.A.</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li><hr class="dropdown-divider"></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            Mis documentos
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index2.html">&#128193; Historial Academico</a></li>
+                            <li><a class="dropdown-item" href="index3.html">&#128193; Record Academico</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            Administracion Personal
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index4.html">&#128221; Actualizar datos</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            Inscripciones
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index4.html">Inscripcion Materias</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            Seguridad
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index4.html">&#128274; Cambiar Contraseña</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            &#128100; ALAN EDUARDO SARAVIA LOPEZ
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index4.html">&#128100; Estudiante</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="index.html">&#8594;] Salir</a></li>
+                            
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Imagen siempre pegada a la izquierda -->
+                <img src="HA.jpeg" alt="Imagen Izquierda" style="width: 370px; height: 280px;">
+                
+                <!-- Botón de descarga -->
+                <a href="generarHA.pdf" download>
+                    <button class="btn btn-success" style="margin-left: 10px;">
+                        圎 Descargar Documento
+                    </button>
+                </a>
+                <table class="custom-table">
+                    <thead>
+                        <tr class="header-2024">
+                            <th>No.</th>
+                            <th>Sigla</th>
+                            <th>Materia</th>
+                            <th>Par.</th>
+                            <th>Nota</th>
+                            <th>Folio</th>
+                            <th>Observacion</th>
+                            <th>Docente</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="second-row">
+                            <td colspan="8">2023 SEGUNDO</td>
+                        </tr>
+                        <tr class="normal">
+                            <td>1</td>
+                            <td>TRA-136</td>
+                            <td>METODOLOGIA DE LA INVESTIGACION</td>
+                            <td></td>
+                            <td>72</td>
+                            <td>APROBADO</td>
+                            <td>CONVALIDACION PROVICIONAL 7/2023</td>
+                            <td></td>
+                        </tr>
+                        <tr class="normal">
+                            <td>2</td>
+                            <td>INF-112</td>
+                            <td>FUNDAMENTOS DIGITALES</td>
+                            <td></td>
+                            <td>55</td>
+                            <td>APROBADO</td>
+                            <td>CONVALIDACION PROVICIONAL 7/2023</td>
+                            <td></td>
+                        </tr>
+                        <tr class="normal">
+                            <td>3</td>
+                            <td>INF-113</td>
+                            <td>PROGRAMACION WEB</td>
+                            <td></td>
+                            <td>69</td>
+                            <td>APROBADO</td>
+                            <td>CONVALIDACION PROVICIONAL 7/2023</td>
+                            <td></td>
+                        </tr>
+                        <tr class="normal">
+                            <td>4</td>
+                            <td>INF-114</td>
+                            <td>ALGEBRA</td>
+                            <td></td>
+                            <td>58</td>
+                            <td>APROBADO</td>
+                            <td>CONVALIDACION PROVICIONAL 7/2023</td>
+                            <td></td>
+                        </tr>
+                        <tr class="normal">
+                            <td>5</td>
+                            <td>INF-115</td>
+                            <td>CALCULO I</td>
+                            <td></td>
+                            <td>52</td>
+                            <td>APROBADO</td>
+                            <td>CONVALIDACION PROVICIONAL 7/2023</td>
+                            <td></td>
+                        </tr>
+                       
+                        <table class="secondary-table">
+                            <tr>
+                                <td class="row1-col1">INSCRITAS: 5</td>
+                                <td class="row1-col2">APROBADAS: 5</td>
+                                <td class="row1-col3">REPROBADAS: 0</td>
+                            </tr>
+                            <tr>
+                                <td class="row2-col1">ABANDONOS: 0</td>
+                                <td class="row2-col2">PROM.GRAL: 60.2</td>
+                                <td class="row2-col3">PROM.APROB: 60.2</td>
+                            </tr>
+                        </table>
+
+                        <table class="custom-table">
+                            <thead>
+                                <tr class="header-2024">
+                                    <th>No.</th>
+                                    <th>Sigla</th>
+                                    <th>Materia</th>
+                                    <th>Par.</th>
+                                    <th>Nota</th>
+                                    <th>Folio</th>
+                                    <th>Observacion</th>
+                                    <th>Docente</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="second-row">
+                                    <td colspan="8">2023 SEGUNDO</td>
+                                </tr>
+                                <tr class="normal">
+                                    <td>1</td>
+                                    <td>INF-111</td>
+                                    <td>PROGRAMACION</td>
+                                    <td>E</td>
+                                    <td>61</td>
+                                    <td></td>
+                                    <td>APROBADO</td>
+                                    <td>LIC. MARISOL TELLEZ RAMIREZ </td>
+                                </tr>
+                                <tr class="normal">
+                                    <td>2</td>
+                                    <td>INF-122</td>
+                                    <td>POGRAMACION WEB II-I</td>
+                                    <td>D</td>
+                                    <td>54</td>
+                                    <td></td>
+                                    <td>APROBADO</td>
+                                    <td>LIC. MIGUEL SEVILLA CHAVEZ</td>
+                                </tr>
+                                <tr class="normal">
+                                    <td>3</td>
+                                    <td>INF-116</td>
+                                    <td>FISICA I</td>
+                                    <td>F</td>
+                                    <td>0</td>
+                                    <td></td>
+                                    <td>ABANDONO</td>
+                                    <td>LIC. FRANZ CUEVAS QUIROZ</td>
+                                </tr>
+                                <tr class="normal">
+                                    <td>4</td>
+                                    <td>INF-125</td>
+                                    <td>ALGEBRA LINEAL</td>
+                                    <td>G</td>
+                                    <td>0</td>
+                                    <td></td>
+                                    <td>ABANDONO</td>
+                                    <td>LIC. ARIEL ALAN KALLA PEÑAFLOR</td>
+                                </tr>
+                                <tr class="normal">
+                                    <td>5</td>
+                                    <td>INF-126</td>
+                                    <td>CALCULO II</td>
+                                    <td>E</td>
+                                    <td>0</td>
+                                    <td></td>
+                                    <td>ABANDONO</td>
+                                    <td>LIC. ROBERTO HUANCA CHOQUE</td>
+                                </tr>
+                                
+                                <table class="secondary-table">
+                                    <tr>
+                                        <td class="row1-col1">INSCRITAS: 5</td>
+                                        <td class="row1-col2">APROBADAS: 2</td>
+                                        <td class="row1-col3">REPROBADAS: 0</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row2-col1">ABANDONOS: 3</td>
+                                        <td class="row2-col2">PROM.GRAL: 60.1</td>
+                                        <td class="row2-col3">PROM.APROB: 57.5</td>
+                                    </tr>
+                                </table>
+        
+        
+                        </table>
+
+                        <table class="custom-table">
+                            <thead>
+                                <tr class="header-2024">
+                                    <th>No.</th>
+                                    <th>Sigla</th>
+                                    <th>Materia</th>
+                                    <th>Par.</th>
+                                    <th>Nota</th>
+                                    <th>Folio</th>
+                                    <th>Observacion</th>
+                                    <th>Docente</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="second-row">
+                                    <td colspan="8">2024 PRIMERO</td>
+                                </tr>
+                                <tr class="normal">
+                                    <td>1</td>
+                                    <td>INF-121</td>
+                                    <td>PROGRAMACION II</td>
+                                    <td>D</td>
+                                    <td>62</td>
+                                    <td>175</td>
+                                    <td>APROBADO</td>
+                                    <td>Ph.D. MARISOL TELLEZ RAMIREZ</td>
+                                </tr>
+                                <tr class="normal">
+                                    <td>2</td>
+                                    <td>INF-116</td>
+                                    <td>FISICA I</td>
+                                    <td>B</td>
+                                    <td>57</td>
+                                    <td>321</td>
+                                    <td>APROBADO</td>
+                                    <td>Ph.D. SILVERIOS CHAVEZ RIOS</td>
+                                </tr>
+                                <tr class="normal">
+                                    <td>3</td>
+                                    <td>INF-122</td>
+                                    <td>PROGRAMACION WEB II</td>
+                                    <td>C</td>
+                                    <td>80</td>
+                                    <td>400</td>
+                                    <td>APROBADO</td>
+                                    <td>Ph.D. MARISOL TELLEZ RAMIREZ</td>
+                                </tr>
+                                <tr class="normal">
+                                    <td>4</td>
+                                    <td>INF-124</td>
+                                    <td>ESTADISTICA I</td>
+                                    <td>B</td>
+                                    <td>56</td>
+                                    <td>444</td>
+                                    <td>APROBADO</td>
+                                    <td>Lic. ALVARO LIMBER CHIRINO GUTIERREZ</td>
+                                </tr>
+                                <tr class="normal">
+                                    <td>5</td>
+                                    <td>INF-125</td>
+                                    <td>ALGEBRA LINEAL</td>
+                                    <td>D</td>
+                                    <td>54</td>
+                                    <td>472</td>
+                                    <td>APROBADO</td>
+                                    <td>Lic. RONNALD ALVARO SILVA GUZMAN</td>
+                                </tr>
+                                <tr class="normal">
+                                    <td>6</td>
+                                    <td>INF-126</td>
+                                    <td>CALCULO II</td>
+                                    <td>D</td>
+                                    <td>53</td>
+                                    <td>488</td>
+                                    <td>APROBADO</td>
+                                    <td>Lic. RAMIRO JUSTO CHOQUE CANAZA</td>
+                                </tr>
+                                <table class="secondary-table">
+                                    <tr>
+                                        <td class="row1-col1">INSCRITAS: 6</td>
+                                        <td class="row1-col2">APROBADAS: 6</td>
+                                        <td class="row1-col3">REPROBADAS: 0</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="row2-col1">ABANDONOS: 0</td>
+                                        <td class="row2-col2">PROM.GRAL: 60.3</td>
+                                        <td class="row2-col3">PROM.APROB: 60.2</td>
+                                    </tr>
+                                </table>
+        
+        
+                        </table>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+
+
+

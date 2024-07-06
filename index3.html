@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: repeating-linear-gradient(-60deg, #e0e0e0, #e0e0e0 2px, #ffffff 2px, #ffffff 4px);
+            font-family: Arial, sans-serif;
+        }
+
+
+        /* Cambia el color de fondo de la barra de navegación a azul y las letras a blanco */
+        .navbar-custom {
+            background-color: rgb(24, 59, 90);
+            position: relative;
+        }
+
+        .navbar-custom::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            z-index: 1;
+        }
+
+        .navbar-custom .container-fluid {
+            position: relative;
+            z-index: 2;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: white;
+            font-weight: bold;
+        }
+
+        .navbar-custom .navbar-nav .nav-link {
+            color: white;
+        }
+
+        .navbar-custom .navbar-toggler-icon {
+            background-color: rgb(24, 59, 90);
+        }
+
+        /* Estilo para las subopciones del menú desplegable */
+        .navbar-custom .dropdown-menu-custom {
+            background-color: rgb(24, 59, 90);
+            z-index: 0;
+        }
+
+        /* Color de texto blanco para las subopciones */
+        .navbar-custom .dropdown-menu-custom a {
+            color: rgb(0, 179, 9);
+        }
+
+        /* Estilo al hacer clic en una opción del menú desplegable */
+        .navbar-custom .dropdown-menu-custom a:hover {
+            color: black;
+            background-color: transparent !important;
+        }
+
+        /* Elimina el margen en las subopciones del menú desplegable */
+        .navbar-custom .dropdown-menu-custom {
+            margin: 0;
+            border: none;
+        }
+
+        /* Elimina el cuadro que rodea las subopciones al desplegarse */
+        .navbar-custom .nav-item.dropdown:hover .dropdown-menu-custom {
+            display: block;
+        }
+        h1 {
+        margin: 0;
+        font-size: 14px; /* Ajusta esta propiedad para cambiar el tamaño del texto */
+        text-align: left;
+        }
+
+
+
+        .custom-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+        }
+
+        .custom-table th,
+        .custom-table td {
+        padding: 10px;
+        text-align: left; /* Alineación a la izquierda */
+        white-space: nowrap; /* Evitar saltos de línea */
+        border-bottom: 1px solid rgb(255, 255, 255); /* Línea gris en la parte inferior de cada celda */
+        }
+
+        .custom-table th {
+        font-weight: bold;
+        }
+
+        .custom-table .header-2024 {
+        background-color: transparent;
+        font-weight: bold;
+        color: black;
+        }
+
+        .custom-table .second-row {
+        background-color: rgb(224, 222, 222);
+        font-weight: bold;
+        color: rgb(10, 115, 175);
+        text-align: left; /* Alineación a la izquierda */
+        }
+
+        .custom-table .normal {
+        font-weight: normal;
+        }
+    </style>
+    <title>Navbar Personalizado</title>
+</head>
+
+<body>
+    
+
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">S.S.A.</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li><hr class="dropdown-divider"></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            Mis documentos
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index2.html">&#128193; Historial Academico</a></li>
+                            <li><a class="dropdown-item" href="index3.html">&#128193; Record Academico</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            Administracion Personal
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index4.html">&#128221; Actualizar datos</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            Inscripciones
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index4.html">Inscripcion Materias</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            Seguridad
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index4.html">&#128274; Cambiar Contraseña</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            &#128100; ALAN EDUARDO SARAVIA LOPEZ
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index4.html">&#128100; Estudiante</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="index.html">&#8594;] Salir</a></li>
+                            
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Imagen siempre pegada a la izquierda -->
+                <img src="RA.jpeg" alt="Imagen Izquierda" style="width: 380px; height: 280px;">
+                
+                <!-- Botón de descarga -->
+                <a href="generarRA.pdf" download>
+                    <button class="btn btn-warning" style="margin-left: 10px;">
+                        圎 Descargar Documento
+                    </button>
+                </a>
+                
+                <!-- Otras dos imágenes pegadas a la izquierda, una encima de otra -->
+                
+                <table class="custom-table">
+                    <thead>
+                        <tr class="header-2024">
+                            
+                            <th>SIGLA</th>
+                            <th>MATERIA</th>
+                            <th>NOTA</th>
+                            <th>PERIODO</th>
+                            <th>GESTION</th>
+                            <th>FOLIO</th>
+                            <th>OBSERVACION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="second-row">
+                            <td colspan="7">1 SEMESTRE</td>
+                        </tr>
+                        
+                        <tr class="normal">
+                            
+                            <td>INF-112</td>
+                            <td>FUNDAMENTOS DIGITALES</td>
+                            
+                            <td>55</td>
+                            <td></td>
+                            <td>APROBADO</td>
+                            <td>CONVALIDACION PROVICIONAL 7/2023</td>
+                            <td></td>
+                        </tr>
+                        <tr class="normal">
+                            
+                            <td>INF-113</td>
+                            <td>PROGRAMACION WEB</td>
+                            
+                            <td>69</td>
+                            <td></td>
+                            <td>APROBADO</td>
+                            <td>CONVALIDACION PROVICIONAL 7/2023</td>
+                            <td></td>
+                        </tr>
+                        <tr class="normal">
+                            
+                            <td>INF-114</td>
+                            <td>ALGEBRA</td>
+                            
+                            <td>58</td>
+                            <td></td>
+                            <td>APROBADO</td>
+                            <td>CONVALIDACION PROVICIONAL 7/2023</td>
+                            <td></td>
+                        </tr>
+                        <tr class="normal">
+                            
+                            <td>INF-115</td>
+                            <td>CALCULO I</td>
+                            
+                            <td>52</td>
+                            <td></td>
+                            <td>APROBADO</td>
+                            <td>CONVALIDACION PROVICIONAL 7/2023</td>
+                            <td></td>
+                        </tr>
+                        <tr class="normal">
+                            
+                            <td>INF-116</td>
+                            <td>FISICA I</td>
+                            <td>57</td>
+                            <td>PRIMERO</td>
+                            <td>2024</td>
+                            <td>321</td>
+                            <td>APROBADO</td>
+                        </tr>
+                      <thead>
+                        <tr class="header-2024">
+                            
+                            <th>SIGLA</th>
+                            <th>MATERIA</th>
+                            <th>NOTA</th>
+                            <th>PERIODO</th>
+                            <th>GESTION</th>
+                            <th>FOLIO</th>
+                            <th>OBSERVACION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="second-row">
+                            <td colspan="7">2 SEMESTRE</td>
+                        </tr>
+
+                        <tr class="normal">
+                            
+                            <td>INF-121</td>
+                            <td>PROGRAMACION II</td>
+                            <td>62</td>
+                            <td>PRIMERO</td>
+                            <td>2024</td>
+                            <td>175</td>
+                            <td>APROBADO</td>
+                        </tr>
+                        <tr class="normal">
+                            
+                            <td>INF-122</td>
+                            <td>PROGRAMACION WEB II</td>
+                            
+                            <td>80</td>
+                            <td>PRIMERO</td>
+                            <td>2024</td>
+                            <td>400</td>
+                            <td>APROBADO</td>
+                            
+                        </tr>
+                        <tr class="normal">
+                            
+                            <td>INF-124</td>
+                            <td>ESTADISTICA I</td>
+                            
+                            <td>56</td>
+                            <td>PRIMERO</td>
+                            <td>2024</td>
+                            <td>444</td>
+                            <td>APROBADO</td>
+                            
+                        </tr>
+                        <tr class="normal">
+                            
+                            <td>INF-125</td>
+                            <td>ALGEBRA LINEAL</td>
+                           
+                            <td>54</td>
+                            <td>PRIMERO</td>
+                            <td>2024</td>
+                            <td>472</td>
+                            <td>APROBADO</td>
+                            
+                        </tr>
+                        <tr class="normal">
+                            
+                            <td>INF-126</td>
+                            <td>CALCULO II</td>
+                            
+                            <td>53</td>
+                            <td>PRIMERO</td>
+                            <td>2024</td>
+                            <td>488</td>
+                            <td>APROBADO</td>
+                            
+                        </tr>
+                        
+
+                    
+
+                        <thead>
+                            <tr class="header-2024">
+                                
+                                <th>SIGLA</th>
+                                <th>MATERIA</th>
+                                <th>NOTA</th>
+                                <th>PERIODO</th>
+                                <th>GESTION</th>
+                                <th>FOLIO</th>
+                                <th>OBSERVACION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="second-row">
+                                <td colspan="7">3 SEMESTRE</td>
+                            </tr>
+                            
+                            <tr class="normal">
+                                
+                                <td>INF-122</td>
+                                <td>PROGRAMACION WEB II</td>
+                                <td>80</td>
+                                <td>PRIMERO</td>
+                                <td>2024</td>
+                                <td>400</td>
+                                <td>APROBADO</td>
+                            </tr>
+                            <tr class="normal">
+                            
+                                <td>TRA-136</td>
+                                <td>METODOLOGIA DE LA INVESTIGACION</td>
+                                
+                                <td>72</td>
+                                <td></td>
+                                <td>APROBADO</td>
+                                <td>CONVALIDACION PROVICIONAL 7/2023</td>
+                                <td></td>
+                            </tr>
+                            
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
